@@ -35,6 +35,14 @@ public class CircleView extends View {
         init();
     }
 
+    /**
+     * 挂载到window窗口
+     */
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+    }
+
     /**&
      *初始化数据，初始化对象
      */
@@ -69,6 +77,17 @@ public class CircleView extends View {
         //矩形对象
         Rect rect = new Rect(250,250,700,500);
         canvas.drawRect(rect,paint);
+
+        int i= 0;
+        try {
+            int j = 10/i;
+        }catch (Exception e){
+            System.out.println(e);
+        }finally {
+            //善后工作
+
+        }
+
     }
 
     /**
@@ -98,7 +117,9 @@ public class CircleView extends View {
                 System.out.println("circlex==="+circleX);
                 System.out.println("circley==="+circleY);
                 //重绘制
-                invalidate();//重新运行ondraw方法
+                invalidate();//重新运行ondraw方法，主线程
+//                postInvalidate();//重新运行ondraw方法，子线程
+//                requestLayout();//请求布局，onmesure，onlayout方法
 
             break;
             case  MotionEvent.ACTION_UP:
@@ -119,4 +140,40 @@ public class CircleView extends View {
 
 
     }
+
+    /**
+     * 测量
+     * @param widthMeasureSpec
+     * @param heightMeasureSpec
+     */
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
+
+    /**
+     * 在测量之后执行，大小改变（当前view）
+     * @param w
+     * @param h
+     * @param oldw
+     * @param oldh
+     */
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+    }
+
+    /**
+     * 布局位置
+     * @param changed
+     * @param left
+     * @param top
+     * @param right
+     * @param bottom
+     */
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
+    }
+
 }

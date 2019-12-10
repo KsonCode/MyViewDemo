@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FlowActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/et"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:onClick="search"
+            android:layout_weight="0"
+            android:text="搜索"
+            android:gravity="center"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <com.laoxu.myviewdemo.view.widget.FlowLayout
+        android:id="@+id/layout_flow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+<!--        <TextView-->
+<!--            android:gravity="center"-->
+<!--            android:padding="10dp"-->
+<!--            android:text="手机"-->
+<!--            android:background="@drawable/flowlayout_bg"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content" />-->
+
+<!--        <TextView-->
+<!--            android:gravity="center"-->
+<!--            android:padding="10dp"-->
+<!--            android:background="@drawable/flowlayout_bg"-->
+<!--            android:text="电脑配件"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content" />-->
+
+<!--        <TextView-->
+<!--            android:gravity="center"-->
+<!--            android:padding="10dp"-->
+<!--            android:background="@drawable/flowlayout_bg"-->
+<!--            android:text="月如意如意如意如意"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content" />-->
+
+<!--        <TextView-->
+<!--            android:gravity="center"-->
+<!--            android:padding="10dp"-->
+<!--            android:background="@drawable/flowlayout_bg"-->
+<!--            android:text="手机"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content" />-->
+
+<!--        <TextView-->
+<!--            android:gravity="center"-->
+<!--            android:padding="10dp"-->
+<!--            android:background="@drawable/flowlayout_bg"-->
+<!--            android:text="65657575757575757"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content" />-->
+
+<!--        <TextView-->
+<!--            android:gravity="center"-->
+<!--            android:padding="10dp"-->
+<!--            android:background="@drawable/flowlayout_bg"-->
+<!--            android:text="手机"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content" />-->
+
+<!--        <TextView-->
+<!--            android:gravity="center"-->
+<!--            android:padding="10dp"-->
+<!--            android:background="@drawable/flowlayout_bg"-->
+<!--            android:text="手机"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content" />-->
+
+<!--        <TextView-->
+<!--            android:gravity="center"-->
+<!--            android:padding="10dp"-->
+<!--            android:background="@drawable/flowlayout_bg"-->
+<!--            android:text="手机"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content" />-->
+
+
+
+<!--        <TextView-->
+<!--            android:gravity="center"-->
+<!--            android:padding="10dp"-->
+<!--            android:background="@drawable/flowlayout_bg"-->
+<!--            android:text="手机65656456565"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content" />-->
+
+<!--        <TextView-->
+<!--            android:gravity="center"-->
+<!--            android:padding="10dp"-->
+<!--            android:text="咯咯咯手机"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content" />-->
+
+<!--        <TextView-->
+<!--            android:gravity="center"-->
+<!--            android:padding="10dp"-->
+<!--            android:text="咯咯咯手机"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content" />-->
+
+
+    </com.laoxu.myviewdemo.view.widget.FlowLayout>
+
+
+
+</LinearLayout>

@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import com.laoxu.myviewdemo.view.widget.entity.DotEntity;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -125,12 +126,42 @@ public class DotView extends View {
      * 清屏
      */
     public void delete() {
+//        if (dotEntityList!=null&&dotEntityList.size()>0){
+//
+//            dotEntityList.clear();//清空
+//
+//            invalidate();//重新绘制
+//
+//        }
+
         if (dotEntityList!=null&&dotEntityList.size()>0){
 
-            dotEntityList.clear();//清空
 
-            invalidate();//重新绘制
+            // 获取集合对应的迭代器，用来遍历集合中的元素的。
+            Iterator<DotEntity> iterator = dotEntityList.iterator();
+            while(iterator.hasNext()){
+                boolean isSelected = iterator.next().isSelected;
+                if(isSelected){
+                    // 注意: 不能用list的remove方法.
+                    // list.remove(next);
 
+                    // 使用迭代器中的remove()方法,可以删除元素.
+                    iterator.remove();
+                }
+            }
+
+            invalidate();//重绘方法，调用ondraw方法
+
+            //删除有问题
+//            for (DotEntity dotEntity : dotEntityList) {
+//
+//                if (dotEntity.isSelected){
+//                    //迭代器删除
+//                    dotEntityList.remove(dotEntity);
+//                }
+//
+//            }
         }
+
     }
 }

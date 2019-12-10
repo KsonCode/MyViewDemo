@@ -19,14 +19,14 @@ import java.util.List;
 import java.util.Random;
 
 public class DotView extends View {
-    private Paint redDotPaint;
-    private Paint greenDotPaint;
-    private int mRadius = 20;
-    private int circleX = 0;
-    private int circleY = 0;
-    private int screenWidth,screenHeight;
-    private List<DotEntity> dotEntityList;
-    private Rect rect;
+    private Paint redDotPaint;//红色画笔
+    private Paint greenDotPaint;//绿色画笔
+    private int mRadius = 20;//圆的半径
+    private int circleX = 0;//圆心x
+    private int circleY = 0;//圆心y
+    private int screenWidth,screenHeight;//屏幕宽高
+    private List<DotEntity> dotEntityList;//存储小点的集合
+    private Rect rect;//矩形框对象
     public DotView(Context context) {
         super(context);
         init();
@@ -74,15 +74,19 @@ public class DotView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        //遍历小点集合
         for (DotEntity dotEntity : dotEntityList) {
             if (!dotEntity.isSelected){//没有被选中
+                //绘制小红点
                 canvas.drawCircle(dotEntity.circleX,dotEntity.circleY,mRadius,redDotPaint);
             }else{
+                //绘制小绿点
                 canvas.drawCircle(dotEntity.circleX,dotEntity.circleY,mRadius,greenDotPaint);
             }
 
         }
 
+        //绘制矩形
         canvas.drawRect(rect,greenDotPaint);
 
 
@@ -93,18 +97,24 @@ public class DotView extends View {
      */
     public void add() {
 
+        //随机x坐标
         circleX = new Random().nextInt(screenWidth);
+        //随机y坐标
         circleY = new Random().nextInt(screenHeight);
 
         DotEntity dotEntity = new DotEntity();
         dotEntity.circleX = circleX;
         dotEntity.circleY = circleY;
+        //如果小点在矩形范围内
         if (circleX>100&&circleX<500&&circleY>150&&circleY<550){
+            //设置小点被选中
             dotEntity.isSelected = true;
         }else{
+            //设置小点非选中
             dotEntity.isSelected = false;
         }
 
+        //添加小点集合
         dotEntityList.add(dotEntity);
 
         invalidate();//重新绘制

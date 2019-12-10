@@ -10,6 +10,9 @@ import android.widget.TextView;
 import com.laoxu.myviewdemo.R;
 import com.laoxu.myviewdemo.utils.ScreenUtils;
 
+/**
+ * 流式布局
+ */
 public class FlowLayout extends ViewGroup {
 
     private int horizontalSize = 30;//水平的间距
@@ -67,15 +70,17 @@ public class FlowLayout extends ViewGroup {
                //计算right，所有的right的宽度
                 right = left+childWidth;
                 if (right>screenWidth){//折行，另起一行
-                    left = 0;
-                    right = left+childWidth;
-                    top = bottom+verticalSize;
+                    left = 0;//第二行第三行第四行距离左侧距离设置为0
+                    right = left+childWidth;//right距离在前几个基础上累加
+                    top = bottom+verticalSize;//换行的顶部，是上一行的底部
                 }
                 //不换行
-                bottom = top+childHeight;
+                bottom = top+childHeight;//底部是每一行顶部+当前控件高度
 
+                //对子view进行布局，left，top，right，bottom
                 childView.layout(left,top,right,bottom);
 
+                //左侧距离累加
                 left += childWidth+horizontalSize;
 
             }

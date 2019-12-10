@@ -2,6 +2,7 @@ package com.laoxu.myviewdemo.view.widget;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -103,9 +104,15 @@ public class FlowLayout extends ViewGroup {
 
         TextView textView = new TextView(getContext());
 
+        //设置textview内边距
         textView.setPadding(20, 0, 20, 0);
+        //设置文本数据
         textView.setText(s);
-        textView.setTextColor(getResources().getColor(R.color.colorAccent));
+        //设置背景
+        textView.setBackgroundResource(R.drawable.flowlayout_bg);
+        //设置文字颜色
+        textView.setTextColor(Color.BLACK);
+        //设置文字大小
         textView.setTextSize(12);
 
 

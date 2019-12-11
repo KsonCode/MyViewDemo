@@ -1,20 +1,28 @@
 package com.laoxu.myviewdemo.view.widget;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.laoxu.myviewdemo.MainActivity;
 import com.laoxu.myviewdemo.R;
 import com.laoxu.myviewdemo.utils.ScreenUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 流式布局
  */
 public class FlowLayout extends ViewGroup {
+
+
 
     private int horizontalSize = 30;//水平的间距
     private int verticalSize = 30;//垂直的间距
@@ -29,6 +37,13 @@ public class FlowLayout extends ViewGroup {
 
     public FlowLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+    }
+
+    /**
+     * 初始化数据
+     */
+    public void init(){
+
     }
 
 
@@ -102,7 +117,7 @@ public class FlowLayout extends ViewGroup {
      */
     public void addChildView(String s) {
 
-        TextView textView = new TextView(getContext());
+        final TextView textView = new TextView(getContext());
 
         //设置textview内边距
         textView.setPadding(20, 0, 20, 0);
@@ -118,5 +133,28 @@ public class FlowLayout extends ViewGroup {
 
         //加到容器
         addView(textView);
+
+        textView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), MainActivity.class);
+                getContext().startActivity(intent);
+                Toast.makeText(getContext(), textView.getText().toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+
+
+    /**
+     * 清空所有数据的方法
+     */
+    public void clearViews(){
+
+        removeAllViews();//移除所有的子view
+
+
+
     }
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    声明自定义属性的对象,数组-->
+    <declare-styleable name="RoundedView">
+
+<!--        颜色的格式是color-->
+        <attr name="roundColor" format="color"></attr>
+<!--        大小的格式：dimenson-->
+        <attr name="roundWidthSize" format="dimension"/>
+
+
+    </declare-styleable>
+</resources>
